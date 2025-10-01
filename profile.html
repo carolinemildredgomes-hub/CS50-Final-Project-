@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Your Profile</h2>
+<p>You have {{ coins }} coins</p>
+
+{% if coins >= 5 %}
+<p>Avatar 1 unlocked 🎉</p>
+<img src="https://avatars.dicebear.com/api/avataaars/avatar1.svg" alt="Avatar 1" width="100">
+{% else %}
+<p>Collect 5 coins to unlock Avatar 1</p>
+<img src="https://avatars.dicebear.com/api/avataaars/avatar1.svg" alt="Locked Avatar" width="100" style="opacity:0.3;">
+{% endif %}
+
+{% if coins >= 10 %}
+<p>Avatar 2 unlocked 🎉</p>
+<img src="https://avatars.dicebear.com/api/avataaars/avatar2.svg" alt="Avatar 2" width="100">
+{% else %}
+<p>Collect 10 coins to unlock Avatar 2</p>
+<img src="https://avatars.dicebear.com/api/avataaars/avatar2.svg" alt="Locked Avatar" width="100" style="opacity:0.3;">
+{% endif %}
+
+{% endblock %}
+

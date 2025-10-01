@@ -1,0 +1,2 @@
+static/avatars/avatar1.png
+static/avatars/avatar2.png

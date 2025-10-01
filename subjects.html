@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>{{ subject.name }}</h2>
+<ul>{% for quiz in quizzes %}<li><a href="/quiz/{{ quiz.id }}">{{ quiz.question }}</a></li>{% endfor %}</ul>
+{% endblock %}
+

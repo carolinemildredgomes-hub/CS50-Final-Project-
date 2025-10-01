@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Mini Game</h2>
+<p>Answer the quick quiz to earn coins!</p>
+<canvas id="gameCanvas" width="400" height="400" style="border:1px solid #000;"></canvas>
+<div>
+  <p id="question"></p>
+  <input type="text" id="answer" placeholder="Your answer">
+  <button onclick="checkAnswer()">Submit</button>
+  <p id="result"></p>
+</div>
+
+<script>
+// Sample JS quiz for mini-game
+const quizzes = [
+  {question:"2 + 2 = ?", answer:"4"},
+  {question:"Capital of France?", answer:"Paris"},
+  {question:"Binary of 5?", answer:"101"},
+  {question:"Author of Hamlet?", answer:"Shakespeare"},
+  {question:"Currency of Japan?", answer:"Yen"}
+];
+
+let currentQuiz = quizzes[Math.floor(Math.random()*quizzes.length)];
+
+document.getElementById("question").innerText = currentQuiz.question;
+
+function checkAnswer() {
+  const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+  const correctAnswer = currentQuiz.answer.toLowerCase();
+  if(userAnswer === correctAnswer) {
+    document.getElementById("result").innerText = "✅ Correct! You earned 1 coin.";
+    // Optionally, send a request to server to update user coins
+  } else {
+    document.getElementById("result").innerText = `❌ Wrong! Correct: ${currentQuiz.answer}`;
+  }
+}
+</script>
+{% endblock %}

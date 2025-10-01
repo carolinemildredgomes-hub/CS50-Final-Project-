@@ -1,0 +1,7 @@
+{
+  "manifest_version":3,
+  "name":"Study Pop Quiz",
+  "version":"1.0",
+  "description":"Quick quiz when you open new tab",
+  "action":{"default_popup":"popup.html"}
+}
